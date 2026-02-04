@@ -3,7 +3,7 @@
 
 <link
   rel="stylesheet"
-  href="//cdn.jsdelivr.net/npm/docsify-dark-mode@latest/dist/style.min.css"
+  href="//unpkg.com/npm/docsify-dark-mode@latest/dist/style.min.css"
 />
 
 <head>
@@ -50,23 +50,46 @@
         }
         // 搜索配置(url：https://docsify.js.org/#/zh-cn/plugins?id=%e5%85%a8%e6%96%87%e6%90%9c%e7%b4%a2-search)
         window.$docsify = {
-            search: {
-                maxAge: 86400000,// 过期时间，单位毫秒，默认一天
-                paths: auto,// 注意：仅适用于 paths: 'auto' 模式
-                placeholder: '搜索',
-                // 支持本地化
-                placeholder: {
-                    '/zh-cn/': '搜索',
-                    '/': 'Type to search'
-                },
-                noData: '找不到结果',
-                depth: 4,
-                hideOtherSidebarContent: false,
-                namespace: 'Docsify-Guide',
-            },
-          
+    search: 'auto', // 默认值
 
-        }
+    search : [
+      '/',            // => /README.md
+      '/guide',       // => /guide.md
+      '/get-started', // => /get-started.md
+      '/zh-cn/',      // => /zh-cn/README.md
+    ],
+
+    // 完整配置参数
+    search: {
+      maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+      paths: [], // or 'auto'
+      placeholder: '搜索',
+
+      // 支持本地化
+      placeholder: {
+        '/': '搜索',
+      },
+
+      noData: 'No Results!',
+
+      // 支持本地化
+      noData: {
+        '/': '找不到结果',
+      },
+
+
+      // 使用不同的索引作为路径前缀（namespaces）
+      // 注意：仅适用于 paths: 'auto' 模式
+      //
+      // 初始化索引时，我们从侧边栏查找第一个路径
+      // 如果它与列表中的前缀匹配，我们将切换到相应的索引
+     //   pathNamespaces: ['/zh-cn', '/ru-ru', '/ru-ru/v1'],
+
+      // 您可以提供一个正则表达式来匹配前缀。在这种情况下，
+      // 匹配到的字符串将被用来识别索引
+      //  pathNamespaces: /^(\/(zh-cn|ru-ru))?(\/(v1|v2))?/
+    }
+  }
         window.$docsify = {
 
         chat: {
@@ -95,6 +118,8 @@
     <script src="//unpkg.com/docsify/lib/plugins/zoom-image.min.js"></script>
     <!-- 搜索功能支持 -->
     <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+    <script src="//unpkg.com/npm/docsify/lib/docsify.min.js"></script>
+    <script src="//unpkg.com/npm/docsify/lib/plugins/search.min.js"></script>
     <!--在所有的代码块上添加一个简单的Click to copy按钮来允许用户从你的文档中轻易地复制代码-->
     <script src="//unpkg.com/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
     <!--在GitHub上编辑-->
@@ -109,7 +134,7 @@
     <script src="//unpkg.com/docsify-bilibili/bilibili.min.js"></script>
     <!--聊天框支持-->
     <!-- Docsify Chat -->
-    <script src="//cdn.jsdelivr.net/npm/docsify-chat/lib/docsify-chat.min.js"></script>
+    <script src="//unpkg.com/npm/docsify-chat/lib/docsify-chat.min.js"></script>
 
     <script src="//unpkg.com/docsify-count/dist/countable.min.js"></script>
 
