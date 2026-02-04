@@ -117,7 +117,23 @@
 
 	<!--禁用网站缓存-->
 	
+    
+    <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
 
+    <!--gittalk评论支持-->>
+    <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
+    <script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+    const gitalk = new Gitalk({
+        clientID: 'Ov23ctJ2wwHkfv5INizV',
+        clientSecret: '03411dced87453746346f9b126152a5ea28aa7a7',
+        repo: 'k2502',
+        owner: 'WZX666613',
+        admin: ['WZX666613'],
+        // facebook-like distraction free mode
+        distractionFreeMode: false
+    })
+</script>
 
 </body>
 
