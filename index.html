@@ -117,10 +117,9 @@
 
 	<!--禁用网站缓存-->
 	
-    
-    <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
-
     <!--gittalk评论支持-->>
+
+    <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
     <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
     <script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
     <script>
@@ -130,6 +129,8 @@
         repo: 'k2502',
         owner: 'WZX666613',
         admin: ['WZX666613'],
+        id: location.pathname, // 返回当前 URL 的路径部分作为id
+        language:'zh-CN', //语言
         // facebook-like distraction free mode
         distractionFreeMode: false
     })
