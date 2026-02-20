@@ -1,107 +1,95 @@
-    <script>
-        /*
-         原始配置注释（为保留原始说明，全部以注释形式保留）：
+<script>
+                window.$docsify = {
+                        // 项目名称
+                        name: 'K2502',
+                        // 仓库地址，点击右上角的Github章鱼猫头像会跳转到此地址
+                        repo: 'https://www.bilibili.com/video/BV1GJ411x7h7/',
+                        // 侧边栏支持，默认加载的是项目根目录下的_sidebar.md文件
+                        loadSidebar: false,
+                        // 导航栏支持，默认加载的是项目根目录下的_navbar.md文件
+                        loadNavbar: true,
+                        // 封面支持，默认加载的是项目根目录下的_coverpage.md文件
+                        coverpage: false,
+                        // 最大支持渲染的标题层级
+                        maxLevel: 5,
+                        // 自定义侧边栏后默认不会再生成目录，设置生成目录的最大层级（建议配置为2-4）
+                        subMaxLevel: 4,
+                        // 小屏设备下合并导航栏到侧边栏
+                        mergeNavbar: true,
+                }
+                // 搜索配置(url：https://docsify.js.org/#/zh-cn/plugins?id=%e5%85%a8%e6%96%87%e6%90%9c%e7%b4%a2-search)
+                window.$docsify = {
+        search: 'auto', // 默认值
 
-         搜索配置(url：https://docsify.js.org/#/zh-cn/plugins?id=%e5%85%a8%e6%96%87%e6%90%9c%e7%b4%a2-search)
+        search : [
+            '/',            // => /README.md
+            '/guide',       // => /guide.md
+            '/get-started', // => /get-started.md
+            '/zh-cn/',      // => /zh-cn/README.md
+        ],
 
-         示例：
-           search: 'auto' // 默认值
+        // 完整配置参数
+        search: {
+            maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+            paths: [], // or 'auto'
+            placeholder: '搜索',
 
-           search : [
-             '/',            // => /README.md
-             '/guide',       // => /guide.md
-             '/get-started', // => /get-started.md
-             '/zh-cn/',      // => /zh-cn/README.md
-           ],
-
-         完整配置参数示例：
-           search: {
-             maxAge: 86400000, // 过期时间，单位毫秒，默认一天
-             paths: [], // or 'auto'
-             placeholder: '搜索',
-             placeholder: { '/': '搜索' },
-             noData: 'No Results!',
-             noData: { '/': '找不到结果' },
-
-             // pathNamespaces 示例：
-             // pathNamespaces: ['/zh-cn', '/ru-ru', '/ru-ru/v1'],
-             // 或正则：pathNamespaces: /^(\/(zh-cn|ru-ru))?(\/(v1|v2))?/
-           }
-
-         以上为原始注释示例，已在此处保留。
-        */
-
-        // Consolidated docsify configuration (保留必要注释并合并多处赋值以避免覆盖)
-        window.$docsify = {
-            // 项目名称
-            name: 'K2502',
-            // 仓库地址
-            repo: 'https://www.bilibili.com/video/BV1GJ411x7h7/',
-            // 侧边栏/导航/封面
-            loadSidebar: false,
-            loadNavbar: true,
-            coverpage: false,
-            // 目录层级
-            maxLevel: 5,
-            subMaxLevel: 4,
-            mergeNavbar: true,
-
-            // 搜索配置（实际使用对象形式，原注释保留在上方）
-            search: {
-                maxAge: 86400000,
-                paths: [],
-                placeholder: '搜索',
-                noData: { '/': '找不到结果' }
+            // 支持本地化
+            placeholder: {
+                '/': '搜索',
             },
 
-            // 聊天插件配置（保留原注释信息）
-            chat: {
-                // 聊天面板标题
-                title: "窗口",
-                // 设置头像
-                users: [
-                    { nickname: "Yuki", avatar: "" },
-                    { nickname: "Robot", avatar: "" }
-                ]
+            noData: 'No Results!',
+
+            // 支持本地化
+            noData: {
+                '/': '找不到结果',
             },
 
-            // 禁用缓存 / 请求头
-            requestHeaders: { 'cache-control': 'no-cache' },
-            alwaysFetchLatest: true,
 
-            // 分页配置
-            pagination: {
-                previousText: '上一章节',
-                nextText: '下一章节',
-                crossChapter: true,
-                crossChapterText: true
-            }
-        };
-    </script>
-            title: "窗口",
-            // 设置头像
-            users: [
-            { nickname: "Yuki", avatar: "" },
-            { nickname: "Robot", avatar: "" },
-            ],
-        },
-   		};
-        //禁用缓存
-        window.$docsify = {
-	    requestHeaders: { 'cache-control': 'no-cache', },
-        alwaysFetchLatest: true,
-        };
-        window.$docsify = {
-        // ...
-        pagination: {
-            previousText: '上一章节',
-            nextText: '下一章节',
-            crossChapter: true,
-            crossChapterText: true,
-        },
-        };
+            // 使用不同的索引作为路径前缀（namespaces）
+            // 注意：仅适用于 paths: 'auto' 模式
+            //
+            // 初始化索引时，我们从侧边栏查找第一个路径
+            // 如果它与列表中的前缀匹配，我们将切换到相应的索引
+         //   pathNamespaces: ['/zh-cn', '/ru-ru', '/ru-ru/v1'],
+
+            // 您可以提供一个正则表达式来匹配前缀。在这种情况下，
+            // 匹配到的字符串将被用来识别索引
+            //  pathNamespaces: /^(\/ (zh-cn|ru-ru))?(\/(v1|v2))?/
+        }
+    }
+                window.$docsify = {
+
+                chat: {
+                        // 聊天面板标题
+                        title: "窗口",
+                        // 设置头像
+                        users: [
+                        { nickname: "Yuki", avatar: "" },
+                        { nickname: "Robot", avatar: "" },
+                        ],
+                },
+     		};
+                //禁用缓存
+                window.$docsify = {
+        	requestHeaders: { 'cache-control': 'no-cache', },
+                alwaysFetchLatest: true,
+                };
+                window.$docsify = {
+                // ...
+                pagination: {
+                        previousText: '上一章节',
+                        nextText: '下一章节',
+                        crossChapter: true,
+                        crossChapterText: true,
+                },
+                };
 
 
+
+
+        </script>
 
     </script>
     <!-- docsify的js依赖 -->
@@ -112,8 +100,6 @@
     <script src="//unpkg.com/docsify/lib/plugins/zoom-image.min.js"></script>
     <!-- 搜索功能支持 -->
     <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
-    <script src="//unpkg.com/npm/docsify/lib/docsify.min.js"></script>
-    <script src="//unpkg.com/npm/docsify/lib/plugins/search.min.js"></script>
     <!--在所有的代码块上添加一个简单的Click to copy按钮来允许用户从你的文档中轻易地复制代码-->
     <script src="//unpkg.com/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
     <!--在GitHub上编辑-->
@@ -130,20 +116,9 @@
     <!-- Docsify Chat -->
     <script src="//unpkg.com/npm/docsify-chat/lib/docsify-chat.min.js"></script>
 
-    <script src="//unpkg.com/docsify-count/dist/countable.min.js"></script>
-
 
     <!-- Docsify Chat -->
     <script src="//cdn.jsdelivr.net/npm/docsify-chat/lib/docsify-chat.min.js"></script>
-
-    <!--章节切换-->>
+    <!--章节切换-->
     <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
-
-	<!--禁用网站缓存-->
-	
-
-</script>
-
-</body>
-
-</html>
+    <!--禁用网站缓存-->
